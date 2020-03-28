@@ -14,10 +14,10 @@ class ESConn(object):
         if(self.es.indices.exists(self.index) == False):
             result = self.es.indices.create(self.index)
             self.es.indices.analyze(self.index, body=self.mapping)
-        return result
+            return result
     #插入数据
-    def insertData(self):
-        for k, row in enumerate(self.datas):
+    def insertData(self,data):
+        for k, row in enumerate(data):
             print("K", k, "row", row)
             self.es.index(self.index, body=row, doc_type='user', id=(k + 1))
     #查询数据
