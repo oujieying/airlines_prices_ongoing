@@ -10,7 +10,7 @@ class DBConn(object):
         self.sql = sql
     #获取数据库连接
     def getConn(self):
-        return pymysql.connect(self.ipAddress,self.dbName,self.passWd,self.dbName)
+        return pymysql.connect(self.ipAddress,self.userName,self.passWd,self.dbName)
     #查询
     def searchByCondition(self):
         #获取连接

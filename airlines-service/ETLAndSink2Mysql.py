@@ -1,6 +1,7 @@
 from MysqlUtils import DBConn
 import json
 from Teacher import  TeacherInfo
+import uuid
 class DealWithData(object):
     def resolveJson(self,path):
         data = json.load(open(path,'rb'))
@@ -15,13 +16,20 @@ class DealWithData(object):
             newTeacher=TeacherInfo()
             newTeacher.__dict__=teacherinfo
             teachers.append(newTeacher)
-            print("newTeachers: ",newTeacher)
         print(len(teachers))
         return teachers
-    def insert2Mysql(self):
-        db = DBConn.getConn()
-        db.cursor().execute(query="")
-
+    def insert2Mysql(self,path):
+        teachers = self.parseTeacherJson(path)
+        query = 'insert into teachers_for_test(name, title, info) values(%s, %s, %s)'
+        conn  = DBConn("localhost","root","root","airlines","")
+        print("dbname",conn.dbName,"user",conn.userName,"passwd",conn.passWd,"ip",conn.ipAddress)
+        db = conn.getConn()
+        for el in teachers:
+            values = (el.name, el.title,el.info)
+            print("values: ",values)
+            db.cursor().execute(query,values)
+            db.commit()
+        db.close()
     def parsejson(self):
         data1 = {
             'name': 'jack',
@@ -39,4 +47,7 @@ if __name__ == '__main__':
     data = DealWithData()
     # data.parsejson()
     # data.resolveJson("D:\\soft\\airlines_prices_ongoing\\ITcast\itcast_pipeline.json")
-    data.parseTeacherJson("D:\\soft\\airlines_prices_ongoing\\ITcast\itcast_pipeline.json")
+    # data.parseTeacherJson("D:\\soft\\airlines_prices_ongoing\\ITcast\itcast_pipeline.json")
+    print(uuid.uuid4())
+    # '16fd2706-8baf-433b-82eb-8c7fada847da'
+    data.insert2Mysql("D:\\soft\\airlines_prices_ongoing\\ITcast\itcast_pipeline.json")
