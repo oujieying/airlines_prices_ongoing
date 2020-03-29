@@ -1,6 +1,7 @@
 AIRPLANE TICKET TREND APPLICATION:
    
    this application will show you the trends of airplane ticket price in different air company 
+
 in the very last hour.
    
    it can help you buy the most cheapest ticket.
@@ -14,6 +15,7 @@ in the very last hour.
 ![architecture](./img/architecture.jpeg)
 
    we will be very happy if you want to join us.
+
    ok ,let's go!
 
 
