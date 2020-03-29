@@ -1,3 +1,8 @@
+#创建数据库
+drop database if exists airlines;
+create  database airlines;
+
+#创建教师信息表
 drop table if exists tearchers_for_test;
 CREATE TABLE `teachers_for_test` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
