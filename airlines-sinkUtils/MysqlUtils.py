@@ -12,12 +12,12 @@ class DBConn(object):
     def getConn(self):
         return pymysql.connect(self.ipAddress,self.userName,self.passWd,self.dbName)
     #查询
-    def searchByCondition(self):
+    def searchByCondition(self,sql,values):
         #获取连接
         connection = self.getConn()
         #获取游标
         cursor = connection.cursor()
-        cursor.execute(query=self.sql)
+        cursor.execute(sql,values)
         result = cursor.fetchall()
         connection.close()
         return result
