@@ -1,4 +1,4 @@
-                         ~~_`**airlines prices ongoing：**`_~~
+                               **airlines prices ongoing**
    this project will show you the airplane ticket in different air company
 in the very last hour .
 
