@@ -10,7 +10,7 @@ import json
 class ItcastPipeline(object):
     def __init__(self):
         # python3保存文件 必须需要'wb'  保存为json格式
-        self.f = open("itcast_pipeline.json", 'wb')
+        self.f = open("min_price_flight_pipeline.json", 'wb')
 
     def process_item(self, item, spider):
         # 读取item中的数据 并换行处理

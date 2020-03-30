@@ -27,7 +27,9 @@ create the archetecture of flask.
 
    install these packages,below here is the shell to install
 
-pip install -i https://pypi.tuna.tsinghua.edu.cn/simple flask 　　
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple flask 
+　　
+
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple flask-login 　　
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple flask-openid 　　
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple flask-sqlalchemy 　　
@@ -36,3 +38,19 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple flask-whooshalchemy 　�
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple flask-wtf 　　
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple flask-babel 　　
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple flup
+
+### HOW TO RUN flask web app
+
+`python3 app.py`
+
+### How to RUN Scrapy project
+
+Your terminal navigate to the spiders dir:
+
+`python3 itcast.py`
+
+OR
+
+`scrapy crawl itcast`
+
+

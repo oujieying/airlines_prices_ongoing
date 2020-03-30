@@ -5,14 +5,21 @@
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/items.html
 
-import scrapy
+from scrapy import Item, Field
 
 
-class ItcastItem(scrapy.Item):
+class ItcastItem(Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     # 与itcast.py 定义的一一对应
-    name = scrapy.Field()
-    title = scrapy.Field()
-    info = scrapy.Field()
+    name = Field()
+    title = Field()
+    info = Field()
 
+
+class MinPriceItem(Item):
+    depcity = Field()
+    depcityname_en = Field()
+    depcityname_zh = Field()
+    region = Field()
+    region_code = Field()
