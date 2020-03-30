@@ -39,6 +39,14 @@ class ItcastSpider(Spider):
             min_price_item['depcityname_zh'] = item.get('DEPCTIYNAME_ZH')
             min_price_item['region'] = item.get('REGION')
             min_price_item['region_code'] = item.get('REGION_CODE')
+            flights = []
+            for flight_item in item.get('FLIGHT'):
+                flight = {"depdate": flight_item.get('DEPDATE'), 'money': flight_item.get('money'),
+                          'arrcityname_en': flight_item.get('ARRCITYNAME_EN'), 'arrcity': flight_item.get('ARRCITY'),
+                          'returndate': flight_item.get('RETURNDATE'), 'segtype': flight_item.get('SEGTYPE'),
+                          'arrcityname_zh': flight_item.get('ARRCTIYNAME_ZH'), 'minprice': flight_item.get('MINPRICE')}
+                flights.append(flight)
+            min_price_item['flight'] = flights
             yield min_price_item
 
 
